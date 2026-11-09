@@ -1,6 +1,6 @@
 services:
   web:
-    image: ${IMAGE_VERSION}
+    image: nginx:alpine
     ports:
       - "8080:80"
     volumes:
