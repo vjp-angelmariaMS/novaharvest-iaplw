@@ -1,3 +1,15 @@
+<?php
+// conexión con MariaDB
+$dsn = sprintf(
+    "mysql:host=%s;dbname=%s;charset=utf8mb4",
+    getenv('DB_HOST'),
+    getenv('DB_NAME')
+);
+$pdo = new PDO($dsn, getenv('DB_USER'), getenv('DB_PASS'));
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// con esto se obtiene la versión de MariaDB
+$version = $pdo->query("SELECT VERSION()")->fetchColumn();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,6 +37,7 @@
         <p>Fecha y hora del servidor: <?= date('d/m/Y H:i:s') ?></p> <!--con esto obtenemos la fecha y hora actuales del servidor con el formato solicitado.-->
         <p>Contenedor PHP: <?= getenv('HOSTNAME') ?></p> <!--con esto obtenemos el nombre del contenedor PHP en el que se está ejecutando la aplicación.-->
         <p>Página generada por PHP-FPM</p>
+        <p>Base de datos: MariaDB <?= $version ?></p>
     </main>
     <footer>NovaHarvest · IES Valle del Jerte · Curso 2026-2027</footer>
 </body>
