@@ -5,6 +5,13 @@
   --texto: #16100b;
 }
 
+header img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+}
+
 * {
   box-sizing: border-box;
 }
