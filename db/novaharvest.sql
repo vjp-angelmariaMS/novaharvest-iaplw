@@ -21,14 +21,13 @@ CREATE TABLE avisos (
 );
 
 -- inserto los excedentes iniciales
-INSERT INTO excedentes
-(producto, productor, pueblo, kilos, precio_kg)
+INSERT INTO excedentes (producto, productor, pueblo, kilos, precio_kg)
 VALUES
-('Melocotón', 'Huerta Los Castaños', 'Cabezuela del Valle', 120, 1.80),
-('Cereza', 'Finca El Rebollar', 'Rebollar', 223, 2.24),
-('Manzana', 'Huerto La Garganta', 'Navaconcejo', 90, 1.50),
-('Uva', 'Hermanos Sánchez', 'Jerte', 80, 1.60),
-('Pera', 'Huerta Los Castaños', 'Cabezuela del Valle', 65, 1.40);
+('Cereza Picota', 'Huerta Los Castaños', 'Cabezuela del Valle', 223, 2.24),
+('Castaña', 'Finca El Rebollar', 'Rebollar', 150, 2.10),
+('Higo', 'Huerto La Garganta', 'Navaconcejo', 35, 2.80),
+('Tomate de colgar', 'Hermanos Sánchez', 'Jerte', 80, 1.10),
+('Calabacín', 'Huerta Los Castaños', 'Cabezuela del Valle', 0, 0.90);
 
 -- retiro los privilegios iniciales del usuario sobre esta base de datos
 REVOKE ALL PRIVILEGES ON novaharvest.* FROM 'novaharvest_app'@'%';
